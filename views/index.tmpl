@@ -1,0 +1,66 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{template "_header"}}
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    {{template "_navbar"}}
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    {{template "_sidebar"}}
+    <!-- Content Wrapper. Contains page content -->
+
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Dashboard</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="card-text text-center p-3">Selamat Datang Di Dashboard Aplikasi Antrian</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    {{template "_footer"}}
+    <!-- /.Footer -->
+
+    <!-- Control Sidebar -->
+    {{template "_control-sidebar"}}
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- Script -->
+  {{template "_script"}}
+  <!-- ./Script -->
+</body>
+</html>
+{{end}}

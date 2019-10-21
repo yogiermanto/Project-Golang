@@ -1,0 +1,159 @@
+{{define "cust-queue"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{template "_header"}}
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    {{template "_navbar"}}
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    {{template "_sidebar"}}
+    <!-- Content Wrapper. Contains page content -->
+
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Customer Antrian</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box">
+                <span class="info-box-icon bg-danger elevation-1" style="width: 80px!important;"><i
+                    class="fas fa-user"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">
+                    <h4>Sisa Antrian</h4>
+                  </span>
+                  <span class="info-box-number">
+                    <h5>3</h5>
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box" style="width:285px !important">
+                <span class="info-box-icon bg-success elevation-1" style="width: 80px!important;"><i
+                    class="fas fa-users"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">
+                    <h4>Antrian Sekarang</h4>
+                  </span>
+                  <span class="info-box-number">
+                    <h5>5</h5>
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <!-- Meja 1 -->
+            <div class="col-lg-4">
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>Meja 1</h3>
+                  <p class="meja_antrian">1</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h4 href="#" class="small-box-footer">
+                  TERISI <i class="fas fa-check"></i></i>
+                </h4>
+              </div>
+            </div>
+            <!-- Akhir Meja 1 -->
+
+            <!-- Meja 2 -->
+            <div class="col-lg-4">
+              <div class="small-box bg-primary">
+                <div class="inner">
+                  <h3>Meja 2</h3>
+
+                  <p class="meja_antrian">2</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h4 href="#" class="small-box-footer">
+                    TERISI <i class="fas fa-check"></i>
+                </h4>
+              </div>
+            </div>
+            <!-- Akhir Meja 2 -->
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-4">
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3>Meja 3</h3>
+
+                  <p class="meja_antrian">3</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <h4 href="#" class="small-box-footer">
+                    TERISI <i class="fas fa-check"></i>
+                </h4>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>Meja 4</h3>
+                  <p class="meja_antrian">4</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h4 href="#" class="small-box-footer ">
+                    TERISI <i class="fas fa-check"></i>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    {{template "_footer"}}
+    <!-- /.Footer -->
+
+    <!-- Control Sidebar -->
+    {{template "_control-sidebar"}}
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- Script -->
+  {{template "_script"}}
+  <!-- ./Script -->
+</body>
+
+</html>
+{{end}}

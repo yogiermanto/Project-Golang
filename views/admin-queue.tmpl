@@ -1,0 +1,201 @@
+{{define "admin-queue"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{template "_header"}}
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    {{template "_navbar"}}
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    {{template "_sidebar"}}
+    <!-- Content Wrapper. Contains page content -->
+
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col col-sm-6">
+              <h1 class="m-0 text-dark">Customer Antrian</h1>
+            </div><!-- /.col -->
+            <div class="col d-flex justify-content-end">
+              <button type="button" class="btn btn-success mr-3" data-toggle="modal" data-target="#modal-tambah">
+                + Tambah Antrian
+              </button>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-reset">
+                Reset
+              </button>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box">
+                <span class="info-box-icon bg-danger elevation-1" style="width: 75px!important;"><i
+                    class="fas fa-user"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">
+                    <h4>Sisa Antrian</h4>
+                  </span>
+                  <span class="info-box-number">
+                    <h5>{{.Total}}</h5>
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="info-box" style="width:285px !important">
+                <span class="info-box-icon bg-success elevation-1" style="width: 75px!important; width:260px !important"><i
+                    class="fas fa-users"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">
+                    <h4>Total Antrian</h4>
+                  </span>
+                  <span class="info-box-number">
+                    <h5>{{.AntrianSekarang}}</h5>
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <!-- Meja 1 -->
+            {{range.Meja}}
+            <div class="col-lg-4">
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>Meja {{.IdMeja}}</h3>
+                  <p class="meja_antrian">1</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <a href="/update?id={{.IdMeja}}" class="small-box-footer">
+                   {{if eq .Status false}}Kosong {{else}}Terisi <i class="fas fa-check"></i>{{end}}
+                </a>
+              </div>
+            </div>
+            {{end}}
+            <!-- Akhir Meja 1 -->
+          </div>
+        </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Footer -->
+    {{template "_footer"}}
+    <!-- /.Footer -->
+
+    <!-- Control Sidebar -->
+    {{template "_control-sidebar"}}
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- Script -->
+  {{template "_script"}}
+  <!-- ./Script -->
+  <div class="modal fade" id="modal-tambah" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Tambah Antrian</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form role="form" action="insert" method="POST">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" name="nama">
+            </div>
+            <div class="form-group">
+              <label for="alamat">No. Hp</label>
+              <input type="number" class="form-control" id="no_hp" placeholder="Masukkan No. Hp" name="no_hp">
+            </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-success" value="Save user">
+          </form>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <div class="modal fade" id="modal-reset" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Reset Antrian</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Apakah kamu yakin?</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">Reset</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+  </div>
+  <div class="modal fade" id="modal-tambah" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Tambah Antrian</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form role="form" action="insert" method="POST">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" name="nama">
+            </div>
+            <div class="form-group">
+              <label for="alamat">No. Hp</label>
+              <input type="number" class="form-control" id="no_hp" placeholder="Masukkan No. Hp" name="no_hp">
+            </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-success" value="Save user">
+          </form>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</body>
+
+</html>
+{{end}}
